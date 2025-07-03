@@ -1,5 +1,5 @@
 import Event from './Event';
-import React, { useRef, useState, useEffect } from 'react'; // Добавьте useRef в импорт
+import React, { useRef, useState, useEffect } from 'react';
     const TABS = {
         all: {
             title: 'Все',
@@ -107,9 +107,18 @@ import React, { useRef, useState, useEffect } from 'react'; // Добавьте 
             }]
         }
     };
-    for (let i = 0; i < 6; ++i) {
-        TABS.all.items = [...TABS.all.items, ...TABS.all.items];
+    const original = TABS.all.items;
+    const repeatCount = 64; // 2**6
+    const newItems = new Array(repeatCount * original.length);
+
+    for (let i = 0; i < repeatCount; ++i) {
+        for (let j = 0; j < original.length; ++j) {
+            newItems[i * original.length + j] = original[j];
+        }
     }
+
+    TABS.all.items = newItems;
+
     const TABS_KEYS = Object.keys(TABS);
 
     function Main() {
