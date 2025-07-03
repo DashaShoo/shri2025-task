@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack serve --mode development --open",
-    "build": "npm run clean && webpack --mode production",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --mode production",
     "build:dev": "webpack --mode development"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
     "babel-loader": "^10.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
