@@ -287,7 +287,7 @@ html, body {
         gap: 1.25rem;
         height: auto;
         margin-bottom: 0.3125rem;
-        background-image: url("./public/assets/bg.webp");
+        background-image: url("./public/assets/bg.avif");
     }
 }
 
